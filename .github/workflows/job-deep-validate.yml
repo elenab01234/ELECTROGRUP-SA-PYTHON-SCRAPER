@@ -31,5 +31,5 @@ jobs:
         if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: python3 -m playwright install chromium --with-deps
 
-      - name: Deep validate (content mode — catches JS 404s)
+      - name: Deep validate (browser mode — catches JS 404s)
         run: python3 -m scraper.validate_jobs --mode content --delete

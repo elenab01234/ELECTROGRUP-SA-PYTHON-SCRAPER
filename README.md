@@ -1,5 +1,8 @@
 # ELECTROGRUP-SA-PYTHON-SCRAPER
 
+[![Oportunitati si Cariere](https://github.com/elenab01234/ELECTROGRUP-SA-PYTHON-SCRAPER/actions/workflows/job-seeker-ro-spider.yml/badge.svg)](https://github.com/elenab01234/ELECTROGRUP-SA-PYTHON-SCRAPER/actions/workflows/job-seeker-ro-spider.yml)
+[![Automation Tests](https://github.com/elenab01234/ELECTROGRUP-SA-PYTHON-SCRAPER/actions/workflows/automation-testing.yml/badge.svg)](https://github.com/elenab01234/ELECTROGRUP-SA-PYTHON-SCRAPER/actions/workflows/automation-testing.yml)
+
 **job_seeker_ro_spider** — a Python scraper for ELECTROGRUP S.A. jobs in Romania. It collects the announcements published on the group's [applytojob board](https://electrogrup.applytojob.com) and publishes them to [peviitor.ro](https://peviitor.ro) through the Peviitor API.
 
 > **🌱 Derived scraper.** This repository is derived from the [**Python template**](https://github.com/ale23yfm/e-infra-sa-python-scraper), the reference implementation for Python scrapers in the peviitor.ro ecosystem.
