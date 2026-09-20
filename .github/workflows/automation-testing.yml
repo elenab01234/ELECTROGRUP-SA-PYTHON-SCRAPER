@@ -11,7 +11,7 @@ on:
 jobs:
   validate-jobs:
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
+    if: github.event_name == 'workflow_dispatch'
     needs: Automation-Tests
 
     steps:
@@ -29,10 +29,7 @@ jobs:
 
       - name: Validate and remove expired jobs
         run: |
-          if [ "${{ github.event_name }}" == "schedule" ]; then
-            echo "Schedule trigger — running LIVE mode..."
-            python3 -m scraper.validate_jobs --mode content --delete
-          elif [ "${{ github.event.inputs.dry_run }}" == "true" ]; then
+          if [ "${{ github.event.inputs.dry_run }}" == "true" ]; then
             echo "Running in DRY RUN mode..."
             python3 -m scraper.validate_jobs --mode content --dry-run
           else
