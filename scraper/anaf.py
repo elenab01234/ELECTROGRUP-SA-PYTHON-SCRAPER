@@ -131,7 +131,7 @@ def get_company_from_anaf(cif):
         data = _fetch_json(f"{CUISCAN_API_URL}?action=company&cui={cif}")
         if data and data.get("denumire"):
             return {
-                "cif": str(data.get("cui")),
+                "cif": str(data.get("cui")).zfill(8),
                 "denumire": data.get("denumire"),
                 "adresa": data.get("adresa"),
                 "stareInregistrare": "INREGISTRAT" if data.get("activ") else "INACTIV",
@@ -173,7 +173,7 @@ def get_company_from_anaf_with_fallback(cif, cached=None):
 
 def _normalize_company(data):
     return {
-        "cif": str(data.get("cif")),
+        "cif": str(data.get("cif")).zfill(8),
         "denumire": data.get("denumire"),
         "adresa": data.get("adresa"),
         "stareInregistrare": data.get("stareInregistrare"),
